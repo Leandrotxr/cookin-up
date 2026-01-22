@@ -5,6 +5,7 @@ import CardCategoria from './CardCategoria.vue';
 import BotaoPrincipal from './BotaoPrincipal.vue';
 
 export default {
+  name: 'SelecionarIngredientes',
   data() {
     return {
       categorias: [] as ICategoria[]
@@ -28,9 +29,11 @@ export default {
 
     <ul class="categorias">
       <li v-for="categoria in categorias" :key="categoria.nome">
-        <CardCategoria :categoria="categoria" 
+        <CardCategoria 
+        :categoria="categoria" 
         @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
-        @remover-ingrediente="$emit('removerIngrediente', $event)"/>
+        @remover-ingrediente="$emit('removerIngrediente', $event)"
+        />
       </li>
     </ul>
 
